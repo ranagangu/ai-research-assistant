@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Outfit', sans-serif;
+    @apply bg-[#030712] text-slate-100 antialiased overflow-x-hidden min-h-screen selection:bg-brand-500/30 selection:text-white;
+  }
+}
+
+/* Premium Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.25);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Glow Background Gradients */
+.bg-glow-purple {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.bg-glow-blue {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-input {
+  background: rgba(31, 41, 55, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  @apply rounded-xl px-4 py-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500/50 transition-all duration-300;
+}
+
+.glass-btn-primary {
+  @apply bg-brand-600 hover:bg-brand-500 text-white font-medium px-5 py-2.5 rounded-xl shadow-lg hover:shadow-brand-500/20 active:scale-95 transition-all duration-200 border border-brand-500/30 flex items-center justify-center gap-2;
+}
+
+.glass-btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  @apply hover:bg-white/10 text-slate-200 hover:text-white font-medium px-5 py-2.5 rounded-xl active:scale-95 transition-all duration-200 flex items-center justify-center gap-2;
+}
+
+/* Micro-animations */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.glow-animation {
+  animation: pulseGlow 8s infinite alternate;
+}
+
+/* Custom Markdown styles inside assistant chat bubble */
+.prose-chat h1 {
+  @apply text-xl font-bold my-2 text-white;
+}
+
+.prose-chat h2 {
+  @apply text-lg font-bold my-2 text-white;
+}
+
+.prose-chat h3 {
+  @apply text-base font-semibold my-1.5 text-white;
+}
+
+.prose-chat p {
+  @apply text-sm leading-relaxed mb-2 text-slate-300;
+}
+
+.prose-chat ul {
+  @apply list-disc list-inside mb-2 text-sm text-slate-300;
+}
+
+.prose-chat ol {
+  @apply list-decimal list-inside mb-2 text-sm text-slate-300;
+}
+
+.prose-chat li {
+  @apply mb-1;
+}
+
+.prose-chat code {
+  @apply bg-slate-900/60 px-1 py-0.5 rounded text-xs text-brand-300 font-mono;
+}
+
+.prose-chat pre {
+  @apply bg-slate-950/80 p-3 rounded-xl overflow-x-auto text-xs text-slate-200 font-mono mb-2 border border-white/5;
+}
+
+.prose-chat pre code {
+  @apply bg-transparent p-0 rounded-none text-slate-200;
+}
+
+.prose-chat blockquote {
+  @apply border-l-4 border-brand-500 bg-white/5 pl-3 py-1 my-2 rounded-r italic text-slate-400 text-sm;
+}
